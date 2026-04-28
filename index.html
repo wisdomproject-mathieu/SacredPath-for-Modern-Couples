@@ -1,36 +1,71 @@
-<!DOCTYPE html><html><head>
-<link rel="stylesheet" href="styles.css">
-<link href="https://api.fontshare.com/v2/css?f[]=boska@400,700&f[]=satoshi@400,700&display=swap" rel="stylesheet">
-</head><body>
-<div class="phone">
-  <!-- Screen: Home -->
-  <div id="home" class="screen active">
-    <small style="color:var(--primary);letter-spacing:2px;text-transform:uppercase">Sacred Path</small>
-    <h1>Ancient wisdom<br>for modern love.</h1>
-    <div class="card" onclick="show('weather')"><h3>Breathe Together</h3><p>Sync your rhythms.</p></div>
-    <div class="card" onclick="show('weather')"><h3>Sacred Repair</h3><p>Bridge the distance.</p></div>
-    <div class="card" onclick="show('weather')"><h3>Deepen Intimacy</h3><p>Embodied practice.</p></div>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Path</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=boska@400,700&f[]=satoshi@400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="phone">
+        <!-- Home: The Matrix -->
+        <div id="home" class="screen active">
+            <small style="color:var(--primary);letter-spacing:2px;text-transform:uppercase">Sacred Path</small>
+            <h1>Intimacy Weather</h1>
+            <p>Mapped to your erotic reality.</p>
+            <div class="card" onclick="show('weather')"><h3>Choose your Weather</h3><p>Sunny, Warm, Electric, Foggy, Stormy, Frozen.</p></div>
+            <div class="card" onclick="show('themes')"><h3>Browse Themes</h3><p>From Verbal Play to Restraint.</p></div>
+        </div>
 
-  <!-- Screen: Ritual -->
-  <div id="ritual" class="screen">
-    <small style="color:var(--primary)">SACRED VOICE</small>
-    <h1>The Presence Reset</h1>
-    <div class="card">1. Face each other for 60 seconds.</div>
-    <div class="card">2. Share "Right now, I feel..."</div>
-    <button class="btn" onclick="show('paywall')">Begin Ritual</button>
-  </div>
+        <!-- Themes Screen -->
+        <div id="themes" class="screen">
+            <h1>The Eight Themes</h1>
+            <div class="card" onclick="show('ritual')">Verbal & Mental Play</div>
+            <div class="card" onclick="show('ritual')">Sensory & Temperature</div>
+            <div class="card" onclick="show('ritual')">Touch, Tease & Edging</div>
+            <div class="card" onclick="show('ritual')">Restraint & Rope</div>
+        </div>
 
-  <div class="nav">
-    <div onclick="show('home')">Home</div>
-    <div onclick="show('ritual')">Rituals</div>
-    <div onclick="show('paywall')">Pro</div>
-  </div>
-</div>
-<script>
-  function show(id) {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-  }
-</script>
-</body></html>
+        <!-- Ritual Screen -->
+        <div id="ritual" class="screen">
+            <small style="color:var(--primary)">PRACTICE</small>
+            <h1 id="ritual-title">Filthy Texts</h1>
+            <div class="card"><p>A single, explicit message at 2pm describing exactly what you intend to do tonight. Specific. Anatomical. Promised.</p></div>
+            <button class="btn" onclick="show('paywall')">Complete Practice</button>
+        </div>
+
+        <!-- Weather Screen -->
+        <div id="weather" class="screen">
+            <h1>Select Weathers</h1>
+            <p>Each partner selects their current state.</p>
+            <div class="card" onclick="show('ritual')">Sunny × Sunny</div>
+            <div class="card" onclick="show('ritual')">Warm × Electric</div>
+        </div>
+
+        <!-- Paywall -->
+        <div id="paywall" class="screen">
+            <h1>Unlock the Library</h1>
+            <div class="card" style="border:2px solid var(--primary)">
+                <h3>Full Access</h3>
+                <p>All 81 practices across 8 themes.</p>
+            </div>
+            <button class="btn">Subscribe for $59/yr</button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav">
+            <div onclick="show('home')">Home</div>
+            <div onclick="show('themes')">Themes</div>
+            <div onclick="show('paywall')">Pro</div>
+        </div>
+    </div>
+
+    <script>
+        function show(id) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>
