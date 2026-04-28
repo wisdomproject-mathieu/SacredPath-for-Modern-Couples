@@ -3,14 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sacred Path</title>
+  <title>Sacred Path | Couples wellness app</title>
+  <meta name="description" content="A premium couples ritual app with onboarding, emotional weather selection, and guided repair rituals.">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <div class="wrap" style="padding: 40px 0;">
-    <h1>Sacred Path</h1>
-    <p>Daily rituals for modern couples.</p>
-    <a href="./mobile.html" style="background:#1f6b67; color:white; padding:12px 24px; border-radius:99px;">Open App Prototype</a>
-  </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./index.html">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M13 28c4.5-9 17.5-9 22 0" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+          <path d="M15 18c2.8-4.8 7-7.2 9-7.2S30.2 13.2 33 18" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+          <circle cx="24" cy="29" r="4.5" fill="currentColor"/>
+        </svg>
+        <span>Sacred Path</span>
+      </a>
+      <nav class="nav-links">
+        <a href="./onboarding.html">Open app</a>
+        <a href="./paywall.html">Pricing</a>
+        <button class="theme-toggle" data-theme-toggle type="button"></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">For modern couples</div>
+          <h1>Feel close again without the mystical barrier.</h1>
+          <p>Daily rituals for repair, reconnection, and intimacy — designed to feel premium, calm, and easy to start.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="./onboarding.html">Start app</a>
+            <a class="btn btn-secondary" href="./paywall.html">View plans</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="kicker">Preview</div>
+          <h2 style="font-size:var(--text-xl);">From tension to tenderness in 10 minutes</h2>
+          <p>Choose your relationship weather, get a matched ritual, and build a habit that keeps bringing you back.</p>
+
+          <div class="stat-row">
+            <div class="metric-card"><strong>3 min</strong><span>Quick reset</span></div>
+            <div class="metric-card"><strong>10 min</strong><span>Repair ritual</span></div>
+            <div class="metric-card"><strong>Daily</strong><span>Habit builder</span></div>
+          </div>
+
+          <div class="pill-row">
+            <span class="pill">No mystical language</span>
+            <span class="pill">Private by default</span>
+            <span class="pill">Built for two</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Why users stay</div>
+          <h2 class="section-title">Make the app feel practical first.</h2>
+          <p>Lead with relationship outcomes, not spiritual terminology. Let users feel the benefit before you introduce deeper tantric framing.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="feature-card">
+            <h3>Simple entry</h3>
+            <p>Users choose how they feel without learning special language first.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Instant value</h3>
+            <p>The first ritual should deliver a quick emotional win.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Retention loop</h3>
+            <p>Daily rituals and weekly plans give users a reason to subscribe.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container cta-band">
+        <div class="eyebrow">Next step</div>
+        <h2 class="section-title" style="font-size:var(--text-xl);">Open the mobile-style app flow.</h2>
+        <p>That flow should include onboarding, weather selection, a ritual screen, and a paywall.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="./onboarding.html">Open app flow</a>
+          <a class="btn btn-secondary" href="./weather.html">Try weather screen</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
 </body>
 </html>
