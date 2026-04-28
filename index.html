@@ -1,12 +1,53 @@
-<!DOCTYPE html><html><head><link rel="stylesheet" href="styles.css"><link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet"></head><body>
-<div class="phone"><div class="content">
-  <span style="color:var(--primary);font-weight:700">SACRED PATH</span>
-  <h1 style="margin-top:20px">Deepen your connection.</h1>
-  <p>Daily rituals to help you repair, reconnect, and find intimacy. How are you feeling today?</p>
-  <div class="stack" style="margin-top:30px">
-    <a href="weather.html" class="card">We need to repair after conflict</a>
-    <a href="weather.html" class="card">We feel distant and need closeness</a>
-    <a href="weather.html" class="card">We want to deepen our love</a>
+<!DOCTYPE html><html><head><link rel="stylesheet" href="styles.css"><link href="https://api.fontshare.com/v2/css?f[]=boska@400,700&f[]=satoshi@400,700&display=swap" rel="stylesheet"></head><body>
+<div class="phone">
+  <!-- Screen: Home/Onboarding -->
+  <div id="home" class="screen active">
+    <h1>Deepen your<br>connection.</h1>
+    <p>Daily rituals to help you repair, reconnect, and find intimacy. How are you feeling today?</p>
+    <div class="card" onclick="show('weather')">We need to repair after conflict</div>
+    <div class="card" onclick="show('weather')">We feel distant and need closeness</div>
+    <div class="card" onclick="show('weather')">We want to deepen our love</div>
+  </div>
+
+  <!-- Screen: Weather -->
+  <div id="weather" class="screen">
+    <h1>Relationship Weather</h1>
+    <p>What is the atmosphere between you two?</p>
+    <div class="card" onclick="show('ritual')"><b>Stormy</b> — Tense and defensive.</div>
+    <div class="card" onclick="show('ritual')"><b>Cloudy</b> — Flat and routine.</div>
+    <div class="card" onclick="show('ritual')"><b>Sunny</b> — Warm and connected.</div>
+  </div>
+
+  <!-- Screen: Ritual -->
+  <div id="ritual" class="screen">
+    <span style="color:var(--primary);font-weight:700">REPAIR RITUAL</span>
+    <h1>The Presence Reset</h1>
+    <div class="card">1. Face each other for 60 seconds.</div>
+    <div class="card">2. Share "Right now, I feel..."</div>
+    <button class="btn" onclick="show('paywall')">Complete Ritual</button>
+  </div>
+
+  <!-- Screen: Paywall -->
+  <div id="paywall" class="screen">
+    <h1>Unlock your journey</h1>
+    <div class="card" style="border:2px solid var(--primary)">
+      <h3>Annual Membership</h3>
+      <p>Full access to all rituals, audio guides, and partner sync.</p>
+    </div>
+    <button class="btn">Subscribe for $59/yr</button>
+  </div>
+
+  <div class="nav">
+    <div onclick="show('home')">Home</div>
+    <div onclick="show('ritual')">Rituals</div>
+    <div onclick="show('paywall')">Pro</div>
   </div>
 </div>
-<div class="nav"><div class="active-nav">Home</div><div>Rituals</div><div>Pro</div></div></div></body></html>
+
+<script>
+  function show(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+</body></html>
