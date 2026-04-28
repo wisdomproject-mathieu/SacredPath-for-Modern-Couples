@@ -9,46 +9,40 @@
 </head>
 <body>
     <div class="phone">
-        <!-- Home: The Matrix -->
+        <!-- Home Screen: Includes Progress Tracking -->
         <div id="home" class="screen active">
-            <small style="color:var(--primary);letter-spacing:2px;text-transform:uppercase">Sacred Path</small>
+            <small style="color:var(--primary);letter-spacing:2px">SACRED PATH</small>
+            <h1>Welcome back.</h1>
+            <p>Your connection score is <b>rising</b>.</p>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+            <div class="card" onclick="show('weather')"><h3>Daily Check-in</h3><p>Sync your rhythms together.</p></div>
+            <div class="card" onclick="show('ritual')"><h3>Library</h3><p>Explore all 81 practices.</p></div>
+        </div>
+
+        <!-- Weather Screen: The Core Differentiator -->
+        <div id="weather" class="screen">
             <h1>Intimacy Weather</h1>
-            <p>Mapped to your erotic reality.</p>
-            <div class="card" onclick="show('weather')"><h3>Choose your Weather</h3><p>Sunny, Warm, Electric, Foggy, Stormy, Frozen.</p></div>
-            <div class="card" onclick="show('themes')"><h3>Browse Themes</h3><p>From Verbal Play to Restraint.</p></div>
+            <p>What is the atmosphere between you?</p>
+            <div class="card" onclick="show('ritual')"><b>Sunny</b> — Light and easy.</div>
+            <div class="card" onclick="show('ritual')"><b>Electric</b> — Crackling and awake.</div>
+            <div class="card" onclick="show('ritual')"><b>Foggy</b> — Drifting, half-absent.</div>
         </div>
 
-        <!-- Themes Screen -->
-        <div id="themes" class="screen">
-            <h1>The Eight Themes</h1>
-            <div class="card" onclick="show('ritual')">Verbal & Mental Play</div>
-            <div class="card" onclick="show('ritual')">Sensory & Temperature</div>
-            <div class="card" onclick="show('ritual')">Touch, Tease & Edging</div>
-            <div class="card" onclick="show('ritual')">Restraint & Rope</div>
-        </div>
-
-        <!-- Ritual Screen -->
+        <!-- Ritual Screen: Premium Experience -->
         <div id="ritual" class="screen">
-            <small style="color:var(--primary)">PRACTICE</small>
-            <h1 id="ritual-title">Filthy Texts</h1>
-            <div class="card"><p>A single, explicit message at 2pm describing exactly what you intend to do tonight. Specific. Anatomical. Promised.</p></div>
+            <small style="color:var(--primary)">REPAIR RITUAL</small>
+            <h1>Presence Reset</h1>
+            <div class="card">1. Face each other for 60 seconds.</div>
+            <div class="card">2. Share one truth about your day.</div>
             <button class="btn" onclick="show('paywall')">Complete Practice</button>
         </div>
 
-        <!-- Weather Screen -->
-        <div id="weather" class="screen">
-            <h1>Select Weathers</h1>
-            <p>Each partner selects their current state.</p>
-            <div class="card" onclick="show('ritual')">Sunny × Sunny</div>
-            <div class="card" onclick="show('ritual')">Warm × Electric</div>
-        </div>
-
-        <!-- Paywall -->
+        <!-- Paywall Screen -->
         <div id="paywall" class="screen">
-            <h1>Unlock the Library</h1>
+            <h1>Unlock your journey</h1>
             <div class="card" style="border:2px solid var(--primary)">
-                <h3>Full Access</h3>
-                <p>All 81 practices across 8 themes.</p>
+                <h3>Annual Membership</h3>
+                <p>Audio-guided tantric paths and deep-work repair.</p>
             </div>
             <button class="btn">Subscribe for $59/yr</button>
         </div>
@@ -56,7 +50,7 @@
         <!-- Navigation -->
         <div class="nav">
             <div onclick="show('home')">Home</div>
-            <div onclick="show('themes')">Themes</div>
+            <div onclick="show('ritual')">Rituals</div>
             <div onclick="show('paywall')">Pro</div>
         </div>
     </div>
