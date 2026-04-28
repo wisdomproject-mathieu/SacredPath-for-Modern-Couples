@@ -2,17 +2,12 @@
 body{font-family:'Satoshi',sans-serif;background:#050505;color:var(--text);margin:0;display:flex;justify-content:center;min-height:100vh}
 .phone{width:100%;max-width:400px;height:850px;background:var(--bg);margin:20px;border-radius:40px;overflow:hidden;border:1px solid var(--border);display:flex;flex-direction:column;position:relative}
 
-/* Zentra Hero Area */
-.hero-zentra{height:60%;width:100%;background:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=600&auto=format&fit=crop') center/cover;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:30px}
-.hero-zentra::after{content:'';position:absolute;bottom:0;left:0;right:0;height:70%;background:linear-gradient(to top, var(--bg), transparent)}
+/* FIX: Ensure screens are hidden unless marked .active */
+.screen{display:none;height:100%;padding:40px 24px;overflow-y:auto}
+.screen.active{display:block}
 
-.zentra-content{z-index:2}
-h1{font-family:'Boska',serif;font-size:2.8rem;line-height:1;margin:0 0 10px 0}
-.user-status{font-size:0.9rem;opacity:0.8;margin-bottom:20px}
-
-/* Daily Practice Card (Zentra style) */
-.daily-card{background:var(--surface);padding:20px;border-radius:24px;margin:20px;z-index:2;border:1px solid var(--border);backdrop-filter:blur(10px)}
-.player{display:flex;align-items:center;gap:15px;margin-top:10px}
-.play-btn{width:50px;height:50px;border-radius:50%;background:var(--primary);color:var(--bg);display:grid;place-items:center;font-size:1.5rem}
-
+h1{font-family:'Boska',serif;font-size:2.5rem;line-height:1.1;margin:0 0 1.5rem}
+.card{background:var(--surface);padding:24px;border-radius:24px;margin-bottom:16px;border:1px solid var(--border);cursor:pointer;transition:0.3s}
+.card:hover{border-color:var(--primary)}
+.btn{background:transparent;color:var(--primary);border:1px solid var(--primary);width:100%;padding:18px;border-radius:18px;text-align:center;font-weight:700;margin-top:20px;cursor:pointer}
 .nav{display:flex;justify-content:space-around;padding:24px;background:var(--surface);border-top:1px solid var(--border);margin-top:auto}
