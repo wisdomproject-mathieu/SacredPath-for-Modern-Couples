@@ -1,65 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sacred Path</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://api.fontshare.com/v2/css?f[]=boska@400,700&f[]=satoshi@400,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="phone">
-        <!-- Home Screen: Includes Progress Tracking -->
-        <div id="home" class="screen active">
-            <small style="color:var(--primary);letter-spacing:2px">SACRED PATH</small>
-            <h1>Welcome back.</h1>
-            <p>Your connection score is <b>rising</b>.</p>
-            <div class="progress-bar"><div class="progress-fill"></div></div>
-            <div class="card" onclick="show('weather')"><h3>Daily Check-in</h3><p>Sync your rhythms together.</p></div>
-            <div class="card" onclick="show('ritual')"><h3>Library</h3><p>Explore all 81 practices.</p></div>
-        </div>
-
-        <!-- Weather Screen: The Core Differentiator -->
-        <div id="weather" class="screen">
-            <h1>Intimacy Weather</h1>
-            <p>What is the atmosphere between you?</p>
-            <div class="card" onclick="show('ritual')"><b>Sunny</b> — Light and easy.</div>
-            <div class="card" onclick="show('ritual')"><b>Electric</b> — Crackling and awake.</div>
-            <div class="card" onclick="show('ritual')"><b>Foggy</b> — Drifting, half-absent.</div>
-        </div>
-
-        <!-- Ritual Screen: Premium Experience -->
-        <div id="ritual" class="screen">
-            <small style="color:var(--primary)">REPAIR RITUAL</small>
-            <h1>Presence Reset</h1>
-            <div class="card">1. Face each other for 60 seconds.</div>
-            <div class="card">2. Share one truth about your day.</div>
-            <button class="btn" onclick="show('paywall')">Complete Practice</button>
-        </div>
-
-        <!-- Paywall Screen -->
-        <div id="paywall" class="screen">
-            <h1>Unlock your journey</h1>
-            <div class="card" style="border:2px solid var(--primary)">
-                <h3>Annual Membership</h3>
-                <p>Audio-guided tantric paths and deep-work repair.</p>
-            </div>
-            <button class="btn">Subscribe for $59/yr</button>
-        </div>
-
-        <!-- Navigation -->
-        <div class="nav">
-            <div onclick="show('home')">Home</div>
-            <div onclick="show('ritual')">Rituals</div>
-            <div onclick="show('paywall')">Pro</div>
-        </div>
+<!DOCTYPE html><html><head>
+<link rel="stylesheet" href="styles.css">
+<link href="https://api.fontshare.com/v2/css?f[]=boska@400,700&f[]=satoshi@400,700&display=swap" rel="stylesheet">
+</head><body>
+<div class="phone">
+  <!-- Zentra Hero Screen -->
+  <div class="hero-zentra">
+    <div class="zentra-content">
+      <small style="color:var(--primary);letter-spacing:2px;text-transform:uppercase">Sacred Path</small>
+      <h1>Zentra</h1>
+      <p class="user-status">You are beautiful.</p>
     </div>
+  </div>
+  
+  <!-- Daily Practice -->
+  <div class="daily-card">
+    <small>YOUR PRACTICE OF THE DAY</small>
+    <div class="player">
+      <div class="play-btn">▶</div>
+      <div><h3>Let's Fall in Love</h3><p>Natalia Sloma</p></div>
+    </div>
+  </div>
 
-    <script>
-        function show(id) {
-            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-        }
-    </script>
-</body>
-</html>
+  <div class="nav">
+    <div>Home</div>
+    <div>Rituals</div>
+    <div>Profile</div>
+  </div>
+</div>
+</body></html>
