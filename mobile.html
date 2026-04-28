@@ -3,54 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sacred Path | Mobile prototype</title>
-  <meta name="description" content="Premium mobile-style prototype with onboarding, ritual flow, and paywall.">
+  <title>Sacred Path App</title>
   <link rel="stylesheet" href="./styles.css">
   <style>
-    body{background:linear-gradient(180deg,var(--color-bg),color-mix(in oklab,var(--color-bg) 88%, var(--color-primary-highlight)));}
-    .phone{width:min(430px,100%);margin:2rem auto;border:1px solid color-mix(in oklab,var(--color-text) 12%, transparent);border-radius:2rem;overflow:hidden;box-shadow:var(--shadow-lg);background:var(--color-bg)}
-    .phone-top{padding:1rem 1rem .75rem;display:flex;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--color-text-muted);background:color-mix(in oklab,var(--color-bg) 90%, transparent)}
-    .phone-main{padding:1rem 1rem 1.25rem;min-height:82vh}
-    .bottom-nav{position:sticky;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;padding:.75rem;background:color-mix(in oklab,var(--color-bg) 90%, transparent);backdrop-filter:blur(14px);border-top:1px solid color-mix(in oklab,var(--color-text) 10%, transparent)}
-    .nav-chip{display:grid;place-items:center;padding:.55rem .4rem;border-radius:1rem;font-size:.72rem;color:var(--color-text-muted)}
-    .nav-chip.active{background:var(--color-surface-2);color:var(--color-text)}
-    .screen{display:none}.screen.active{display:block}
-    .card{padding:1rem;border-radius:1.25rem;background:var(--color-surface);border:1px solid color-mix(in oklab,var(--color-text) 10%, transparent);margin-top:.9rem}
+    .phone { max-width: 400px; margin: 50px auto; border: 8px solid #333; border-radius: 40px; padding: 20px; height: 700px; background: white; }
   </style>
 </head>
 <body>
   <div class="phone">
-    <div class="phone-top"><span>Sacred Path</span><button class="theme-toggle" data-theme-toggle type="button"></button></div>
-    <div class="phone-main">
-      <section class="screen active">
-        <div class="eyebrow">Onboarding</div>
-        <h1 style="font-family:var(--font-display);font-size:2.2rem;margin:.5rem 0 1rem">Feel close again.</h1>
-        <p>Daily rituals for couples who want more connection, better repair after arguments, and a calmer evening routine.</p>
-        <div class="card"><strong>Choose your goal</strong><div class="pill-row" style="margin-top:.7rem"><span class="pill">Reconnect</span><span class="pill">Repair</span><span class="pill">Deepen intimacy</span><span class="pill">Build a habit</span></div></div>
-        <div class="actions"><a class="btn btn-primary" href="#" data-next>Continue</a></div>
-      </section>
-      <section class="screen">
-        <div class="eyebrow">Check-in</div>
-        <h2 style="font-family:var(--font-display);font-size:1.9rem;margin:.5rem 0 1rem">What do you need tonight?</h2>
-        <div class="option-list"><div class="option active">A calm reset after tension</div><div class="option">A warm reconnection ritual</div><div class="option">A deeper intimacy practice</div></div>
-        <div class="actions"><a class="btn btn-secondary" href="#" data-prev>Back</a><a class="btn btn-primary" href="#" data-next>Show ritual</a></div>
-      </section>
-      <section class="screen">
-        <div class="eyebrow">Ritual preview</div>
-        <h2 style="font-family:var(--font-display);font-size:1.8rem;margin:.5rem 0 1rem">10-minute repair ritual</h2>
-        <div class="card"><strong>1. Breathe together</strong><p style="margin-top:.3rem">Sit face to face and take five slow breaths.</p></div>
-        <div class="card"><strong>2. Speak one truth</strong><p style="margin-top:.3rem">Each person says what they feel without fixing.</p></div>
-        <div class="card"><strong>3. Choose one small repair</strong><p style="margin-top:.3rem">Touch, thank, or ask for what helps right now.</p></div>
-        <div class="actions"><a class="btn btn-primary" href="#" data-next>Continue to premium</a></div>
-      </section>
-      <section class="screen">
-        <div class="eyebrow">Premium</div>
-        <h2 style="font-family:var(--font-display);font-size:1.9rem;margin:.5rem 0 1rem">Unlock the full relationship ritual library</h2>
-        <div class="card"><div class="kicker">Most popular</div><h3 style="font-family:var(--font-display);font-size:1.5rem;margin:.5rem 0">Annual plan</h3><p>Includes guided audio, daily rituals, after-argument pathways, weekly reconnection journeys, and partner sync.</p><div class="actions" style="margin-top:1rem"><a class="btn btn-primary" href="#">Start free trial</a><a class="btn btn-secondary" href="#">Monthly</a></div></div>
-      </section>
-    </div>
-    <nav class="bottom-nav" aria-label="Bottom navigation"><div class="nav-chip active">Home</div><div class="nav-chip">Plan</div><div class="nav-chip">Ritual</div><div class="nav-chip">Pro</div></nav>
+    <h1>Sacred Path</h1>
+    <p>Onboarding Flow</p>
+    <a href="./Weather.html" style="background:#1f6b67; color:white; padding:10px 20px; border-radius:10px;">Start Ritual</a>
   </div>
-  <script>const root=document.documentElement,t=document.querySelector('[data-theme-toggle]');let theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';root.setAttribute('data-theme',theme);const icons={dark:'☀︎',light:'☾'};const set=()=>{t.textContent=icons[theme]};set();t.onclick=()=>{theme=theme==='dark'?'light':'dark';root.setAttribute('data-theme',theme);set()};const screens=[...document.querySelectorAll('.screen')];let i=0;const show=n=>{i=Math.max(0,Math.min(screens.length-1,n));screens.forEach((s,idx)=>s.classList.toggle('active',idx===i));};document.querySelectorAll('[data-next]').forEach(b=>b.onclick=e=>{e.preventDefault();show(i+1)});document.querySelectorAll('[data-prev]').forEach(b=>b.onclick=e=>{e.preventDefault();show(i-1)});</script>
+  <script src="./app.js"></script>
 </body>
 </html>
