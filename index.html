@@ -1,17 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0f0d10" />
-    <title>Sacred Path — Modern Couples</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Path</title>
+    <style>
+        :root{--primary:#d1a07b;--text:#efe6de;--bg:#0f0d10;--surface:#1a171c;--border:rgba(209, 160, 123, 0.2)}
+        body{font-family:sans-serif;background:#050505;color:var(--text);margin:0;display:flex;justify-content:center;min-height:100vh}
+        .phone{width:100%;max-width:400px;min-height:850px;background:var(--bg);margin:20px;border-radius:40px;overflow:hidden;border:1px solid var(--border);display:flex;flex-direction:column;position:relative}
+        .screen{display:none;height:100%;padding:40px 24px;overflow-y:auto}
+        .screen.active{display:block}
+        h1{font-family:serif;font-size:2.5rem;line-height:1.1;margin:0 0 1.5rem}
+        .card{background:var(--surface);padding:24px;border-radius:24px;margin-bottom:16px;border:1px solid var(--border);cursor:pointer}
+        .btn{background:transparent;color:var(--primary);border:1px solid var(--primary);width:100%;padding:20px;border-radius:18px;text-align:center;font-weight:700;margin-top:20px;cursor:pointer}
+        .nav{display:flex;justify-content:space-around;padding:24px;background:var(--surface);border-top:1px solid var(--border);margin-top:auto}
+    </style>
+</head>
+<body>
+    <div class="phone">
+        <div id="home" class="screen active">
+            <small style="color:var(--primary);text-transform:uppercase">SACRED PATH</small>
+            <h1>Welcome back.</h1>
+            <p>Your connection score is <b>rising</b>.</p>
+            <div class="card" onclick="show('weather')"><h3>Daily Check-in</h3><p>Sync your rhythms.</p></div>
+            <div class="card" onclick="show('ritual')"><h3>Library</h3><p>Explore all 81 practices.</p></div>
+        </div>
+        <div id="weather" class="screen">
+            <h1>Intimacy Weather</h1>
+            <p>What is the atmosphere today?</p>
+            <div class="card" onclick="show('ritual')"><b>Sunny</b> — Light and easy.</div>
+            <div class="card" onclick="show('ritual')"><b>Electric</b> — Crackling and awake.</div>
+        </div>
+        <div id="ritual" class="screen">
+            <small style="color:var(--primary)">REPAIR RITUAL</small>
+            <h1>Presence Reset</h1>
+            <div class="card">1. Face each other for 60 seconds.</div>
+            <div class="card">2. Share "Right now, I feel..."</div>
+            <button class="btn" onclick="show('paywall')">Complete Practice</button>
+        </div>
+        <div id="paywall" class="screen">
+            <h1>Unlock your journey</h1>
+            <div class="card" style="border:2px solid var(--primary)">
+                <h3>Annual Membership</h3>
+                <p>Audio-guided tantric paths and deep-work repair.</p>
+            </div>
+            <button class="btn">Subscribe for $59/yr</button>
+        </div>
+        <div class="nav">
+            <div onclick="show('home')">Home</div>
+            <div onclick="show('ritual')">Rituals</div>
+            <div onclick="show('paywall')">Pro</div>
+        </div>
+    </div>
+    <script>
+        function show(id) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
 </html>
