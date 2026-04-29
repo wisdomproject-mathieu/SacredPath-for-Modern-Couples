@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-charcoal text-white font-sans;
+    min-height: 100dvh;
+    overscroll-behavior: none;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-charcoal;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-charcoal-border rounded-full;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-charcoal-surface border border-charcoal-border rounded-2xl;
+  }
+
+  .card-elevated {
+    @apply bg-charcoal-elevated border border-charcoal-border rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply bg-copper text-charcoal font-semibold px-6 py-3 rounded-xl
+           hover:bg-copper-light active:scale-95 transition-all duration-200
+           shadow-glow;
+  }
+
+  .btn-ghost {
+    @apply border border-copper/30 text-copper px-6 py-3 rounded-xl
+           hover:bg-copper/10 active:scale-95 transition-all duration-200;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 30px rgba(209, 160, 123, 0.4);
+  }
+
+  .gradient-copper {
+    background: linear-gradient(135deg, #d1a07b 0%, #a87850 100%);
+  }
+
+  .gradient-dark {
+    background: linear-gradient(180deg, #0f0d10 0%, #1a171c 100%);
+  }
+}
